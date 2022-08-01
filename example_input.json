@@ -1,0 +1,8 @@
+{
+    "geometry" : {
+        "file" : "meshes/sphere.vtk"
+    },
+    "output" : {
+        "file" : "sphere_result.vtk"
+    }
+}
