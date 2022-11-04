@@ -53,7 +53,7 @@ def load_vtk(filename):
         verts = vertices[vertex_ind]
 
         # Initialize panel object
-        panel_obj = Panel(vertices[vertex_ind[0],:], vertices[vertex_ind[1],:][1], vertices[vertex_ind[2],:], vertex_ind[0], vertex_ind[1], vertex_ind[2])
+        panel_obj = Panel(vertices[vertex_ind[0],:], vertices[vertex_ind[1],:], vertices[vertex_ind[2],:], vertex_ind[0], vertex_ind[1], vertex_ind[2])
 
         # Store
         panels.append(panel_obj)
