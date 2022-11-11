@@ -62,7 +62,8 @@ def load_vtk(filename):
     for i, panel_i in enumerate(panels):
 
         # loop through possible neighbors
-        for j, panel_j in enumerate(panels[i+1:]):
+        for j in range(i+1, N_panels):
+            panel_j = panels[j]
 
             # Determine if we're touching and/or abutting
             num_shared = 0
@@ -71,11 +72,9 @@ def load_vtk(filename):
                 # Check for shared vertex
                 if i_vert in panel_vertex_indices[j]:
                     num_shared += 1
-                    if num_shared==2:
-                        break # Don't need to keep going
                     
             # Abutting panels (two shared vertices)
-            if num_shared==2 and j not in panel_i.neighbors:
+            if num_shared == 2 and j not in panel_i.neighbors:
                 panel_i.neighbors.append(j)
                 panel_j.neighbors.append(i)
 
